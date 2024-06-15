@@ -1,0 +1,39 @@
+package layouts
+
+import (
+"templ-me-daddy/web/components"
+)
+
+templ Layout() {
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    @components.Header()
+    <main class="min-h-screen w-full">
+        <nav class="flex w-full border border-b-zinc-200 px-4 py-4">
+            <h3 class="text-base lg:text-lg font-medium text-center">
+                GO Fullstack app
+            </h3>
+            <ul>
+                <li>
+                    <a href="/about" hx-get="/about" hx-target="#content" hx-push-url="true">About</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="mt-6 w-full flex justify-center items-center flex-col" id="content">
+            { children... }
+        </div>
+    </main>
+    @components.Footer()
+</body>
+
+</html>
+<script>
+    function reloadPage() {
+        setTimeout(function () {
+            window.location.reload();
+        }, 2000);
+    }
+</script>
+}

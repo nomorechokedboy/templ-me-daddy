@@ -1,0 +1,13 @@
+package about
+
+import "templ-me-daddy/web/layouts"
+
+templ About() {
+	<div>About page</div>
+}
+
+templ Index(page templ.Component) {
+	@layouts.Layout() {
+		@page
+	}
+}
